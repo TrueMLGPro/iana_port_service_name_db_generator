@@ -67,6 +67,9 @@ with open(local_iana_csv, 'r') as file:
 		protocol = row[2]
 		description = row[3]
 
+		if len(name) == 0:
+			name = "-"
+
 		# Handle port ranges
 		if '-' in number_range:
 			start, end = number_range.split('-')
